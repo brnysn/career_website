@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="img/fav.png">
-    <meta name="author" content="codepixer">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ trans('panel.site_title') }}</title>
+    <meta name="author" content="Themesdesign"/>
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/linearicons.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">					
-    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    </head>
-    <body>
-    @include('partials.header')
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
-        @include('partials.banner')
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css">
 
-        @yield('home')
-            
-        <!-- Start post Area -->
-        <section class="post-area section-gap">
-            <div class="container">
-                <div class="row justify-content-center d-flex">
-                    @yield('content')
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/materialdesignicons.min.css') }}"/>
 
-                    @include('partials.sidebar')
-                </div>
-            </div>	
-        </section>
-        <!-- End post Area -->
-	
-        @include('partials.footer')
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fontawesome.css') }}"/>
 
-        <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>			
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-        <script src="{{ asset('js/easing.min.js') }}"></script>			
-        <script src="{{ asset('js/hoverIntent.js') }}"></script>
-        <script src="{{ asset('js/superfish.min.js') }}"></script>	
-        <script src="{{ asset('js/jquery.ajaxchimp.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>	
-        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>			
-        <script src="{{ asset('js/jquery.sticky.js') }}"></script>
-        <script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>			
-        <script src="{{ asset('js/parallax.min.js') }}"></script>		
-        <script src="{{ asset('js/mail-script.js') }}"></script>	
-        <script src="{{ asset('js/app.js') }}"></script>	
-    </body>
+    <!-- selectize css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/selectize.css') }}"/>
+
+{{--    <!--Slider-->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}"/>--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.css') }}"/>--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}"/>--}}
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}"/>
+
+</head>
+<body>
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+<!-- Loader -->
+@include('partials.header')
+
+@include('partials.banner')
+
+@yield('content')
+
+@include('partials.footer')
+
+<!-- Back to top -->
+<a href="#" class="back-to-top rounded text-center" id="back-to-top">
+    <i class="mdi mdi-chevron-up d-block"> </i>
+</a>
+<!-- Back to top -->
+
+<!-- javascript -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins.js') }}"></script>
+
+<!-- selectize js -->
+<script src="{{ asset('assets/js/selectize.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+
+{{--<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/js/counter.int.js') }}"></script>--}}
+
+<script src="{{ asset('assets/js/app.js') }}"></script>
+<script src="{{ asset('assets/js/home.js') }}"></script>
+
+</body>
 </html>

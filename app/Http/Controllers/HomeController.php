@@ -19,7 +19,6 @@ class HomeController extends Controller
             ->pluck('name', 'id');
         $jobs = Job::with('company')
             ->orderBy('id', 'desc')
-            ->take(7)
             ->get();
 
         return view('index', compact(['searchLocations', 'searchCategories', 'searchByCategory', 'jobs']));

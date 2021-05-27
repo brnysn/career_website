@@ -1,15 +1,20 @@
 @hasSection ('banner')
-    <section class="banner-area relative" id="home">	
-        <div class="overlay overlay-bg"></div>
+    <!-- Start home -->
+    <section class="bg-half page-next-level" style="background: url('{{asset('assets/images/bg/bg-page-header.jpeg')}}') center center; background-size: cover;">
+        <div class="bg-overlay"></div>
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12">
-                    <h1 class="text-white">
-                        @yield('banner')
-                    </h1>	
-                    <p class="text-white link-nav"><a href="{{ route('home') }}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{ url()->full() }}"> @yield('banner')</a></p>
-                </div>											
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h4 class="text-uppercase title mb-4">@yield('banner')</h4>
+                        <ul class="page-next d-inline-block mb-0">
+                            <li><a href="{{ route('home') }}" class="text-uppercase font-weight-bold">Home</a></li>
+                            <li><a href="{{ url()->full() }}" class="text-uppercase font-weight-bold">@yield('banner')</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <!-- end home -->
 @endif

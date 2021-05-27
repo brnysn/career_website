@@ -11,17 +11,6 @@ Route::get('location/{location}', 'LocationController@show')->name('locations.sh
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
-    // Permissions
-    Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
-    Route::resource('permissions', 'PermissionsController');
-
-    // Roles
-    Route::delete('roles/destroy', 'RolesController@massDestroy')->name('roles.massDestroy');
-    Route::resource('roles', 'RolesController');
-
-    // Users
-    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
-    Route::resource('users', 'UsersController');
 
     // Categories
     Route::delete('categories/destroy', 'CategoriesController@massDestroy')->name('categories.massDestroy');
@@ -39,4 +28,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Jobs
     Route::delete('jobs/destroy', 'JobsController@massDestroy')->name('jobs.massDestroy');
     Route::resource('jobs', 'JobsController');
+
+
+//    // Permissions
+//    Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
+//    Route::resource('permissions', 'PermissionsController');
+//
+//    // Roles
+//    Route::delete('roles/destroy', 'RolesController@massDestroy')->name('roles.massDestroy');
+//    Route::resource('roles', 'RolesController');
+//
+//    // Users
+//    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+//    Route::resource('users', 'UsersController');
+
 });

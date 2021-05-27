@@ -14,10 +14,10 @@ class CompaniesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        foreach(range(1, 4) as $id)
-        {
+        foreach (range(1, 6) as $id) {
             $company = Company::create(['name' => $faker->unique()->company]);
-            $company->addMedia(public_path('img/post.png'))->preservingOriginal()->toMediaCollection('logo');
+            $company->addMedia(public_path('assets/images/companies/img-' . rand(1,
+                    10) . '.png'))->preservingOriginal()->toMediaCollection('logo');
         }
     }
 }

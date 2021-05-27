@@ -8,14 +8,14 @@ trait MediaUploadingTrait
 {
     public function storeMedia(Request $request)
     {
-// Validates file size
+        // Validates file size
         if (request()->has('size')) {
             $this->validate(request(), [
                 'file' => 'max:' . request()->input('size') * 1024,
             ]);
         }
 
-// If width or height is preset - we are validating it as an image
+        // If width or height is preset - we are validating it as an image
         if (request()->has('width') || request()->has('height')) {
             $this->validate(request(), [
                 'file' => sprintf(
@@ -42,7 +42,7 @@ trait MediaUploadingTrait
         $file->move($path, $name);
 
         return response()->json([
-            'name'          => $name,
+            'name' => $name,
             'original_name' => $file->getClientOriginalName(),
         ]);
     }
